@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calling App</title>
+</head>
+
+<body>
+    <center>
+        <h1 id="cast"></h1>
+    </center>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        socket.on('myMSG', (data) => {
+            document.getElementById('cast').innerHTML = data
+        })
+    </script>
+</body>
+
+</html>
